@@ -129,7 +129,7 @@ var cartHandeler=(Cart,Item)=>{
   {
     return Cart.map(el=> el.id===Item.id?{...el,quantity:el.quantity+Item.quantity}:el)
   }
-  return [Cart]
+  return [...Cart,selectedItem]
 
 };
 
