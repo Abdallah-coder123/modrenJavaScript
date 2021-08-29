@@ -136,3 +136,22 @@ var cartHandeler=(Cart,Item)=>{
 const handler=cartHandeler(shoppingCart,selectedItem)
 
 console.log(handler);
+
+const fullInfo=[
+   {id:1,name:"t-shirt"},
+  {id:2,name:"car"},
+  {id:3,name:"bus"},
+]
+
+//////////////////////reatrive ID from another Json and reatrive quantity from another json the one json is shoopingCart and the second json fullInfo //////////////
+var reatriveQuntatity= (id)=>
+{
+  var DataById=handler.find(el=>el.id===id);
+  return DataById.quantity
+}
+
+const handler=cartHandeler(shoppingCart,selectedItem)
+
+console.log("the cart selected",handler);
+
+fullInfo.forEach((el)=>console.log({id:el.id,name:el.name,quantity:reatriveQuntatity(el.id)}));
