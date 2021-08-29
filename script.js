@@ -112,3 +112,27 @@ const name="kareem";
 const newName=names.filter(el=>el.includes("ee"));
 console.log(newName);
  }
+/////////////////////////////////////////////////////////////
+زيادة الكميه عند الضغط على المنتج 
+
+const shoppingCart=[
+  {id:1,quantity:4},
+  {id:2,quantity:3},
+  {id:3,quantity:2},
+]
+
+const selectedItem={id:1,quantity:5}
+
+var cartHandeler=(Cart,Item)=>{
+  const checking=Cart.find(el=>el.id===Item.id);
+  if(checking)
+  {
+    return Cart.map(el=> el.id===Item.id?{...el,quantity:el.quantity+Item.quantity}:el)
+  }
+  return [Cart]
+
+};
+
+const handler=cartHandeler(shoppingCart,selectedItem)
+
+console.log(handler);
